@@ -2,10 +2,17 @@ import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import moment from 'moment';
 
 const SearchFil = () => {
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
+
+  const handleClick=()=>{
+    const sd= new Date(moment(new Date(startDate)).format("YYYY-MM-DD")).getTime();
+    const ed= new Date(moment(new Date(endDate)).format("YYYY-MM-DD")).getTime();
+    console.log(ed,sd);      
+  }
 
   return (
     <div>
@@ -13,8 +20,10 @@ const SearchFil = () => {
       <div>
         <label>Check-In Date:</label>
         <DatePicker
+        dateFormat="dd/MM/yyyy"
           selected={startDate}
           onChange={(date) => setStartDate(date)}
+          
           selectsStart
           startDate={startDate}
           endDate={endDate}
@@ -34,7 +43,7 @@ const SearchFil = () => {
           placeholderText="Select Check-Out Date"
         />
 
-<Button variant="secondary">
+<Button variant="secondary" onClick={() => handleClick()}>
             Search
           </Button>
       </div>

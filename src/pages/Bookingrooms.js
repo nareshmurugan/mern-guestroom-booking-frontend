@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Card, Button, Modal, Carousel } from "react-bootstrap";
-import './App.css';
+import '../App.css';
 import { Link } from 'react-router-dom/dist/umd/react-router-dom.development';
 
 const ProductCard = ({
@@ -30,10 +30,6 @@ const ProductCard = ({
         style={{
           margin: "auto",
           textAlign: "left",
-          // maxWidth: "100%",
-          // width:"80%",
-          // minHeight: "10vh",
-          // height: "max(250px, 18rem)",
           marginTop: "10px",
           border: "1px solid #ccc",
           display: "flex",

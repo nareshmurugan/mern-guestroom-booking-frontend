@@ -1,5 +1,5 @@
 import React from 'react'
-import './App.css'
+import '../App.css'
 import { BsFacebook, BsTwitterX,BsInstagram   } from "react-icons/bs";
 import { Link } from 'react-router-dom/dist/umd/react-router-dom.development'
 

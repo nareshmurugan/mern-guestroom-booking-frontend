@@ -1,17 +1,16 @@
-import React from 'react';
-import Navbar from './Navbar';
-import Payment from './Payment';
-import { useState } from 'react';
-import Home from './Home';
-import { Route, Routes } from 'react-router-dom/dist/umd/react-router-dom.development';
-import Roomscreen from './Roomscreen';
-import Services from './Services';
-import Aboutus from './Aboutus';
-import Bookings from './Bookings';
-import Login from './Login';
-import Signup from './Signup';
+import React, { useState }  from 'react';
+import Navbar from './header-footer/Navbar'
+import Payment from './pages/Payment'
+import Home from './pages/Home'
+import Roomscreen from './pages/Roomscreen';
+import Services from './pages/Services';
+import Aboutus from './pages/Aboutus';
+import Bookings from './pages/Bookings';
+import Login from './logins/Login';
+import Signup from './logins/Signup';
+import Footer from './header-footer/Footer';
 import './App.css';
-import Footer from './Footer';
+import { Route, Routes } from 'react-router-dom/dist/umd/react-router-dom.development';
 
 
 

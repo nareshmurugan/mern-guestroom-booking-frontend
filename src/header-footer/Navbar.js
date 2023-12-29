@@ -1,7 +1,28 @@
-import React from "react";
+import React,{useState, useEffect} from "react";
 import { Link } from "react-router-dom/dist/umd/react-router-dom.development";
+import axios from "axios";
+import Cookies from "js-cookies"
 
 const Navbar = () => {
+  const [profile, setProfile]=useState(false)
+  useEffect(() => {
+    const credVerify = async () => {
+      try {
+        const token = `Bearer ${Cookies.getItem("Credentials")}`;
+        console.log(token)
+        const data = (await axios.post("/api/user/verify",{token: token})).data;
+        console.log(data)
+        if (data.result === "Success") {
+          setProfile(true);
+        }
+      } catch (error) {
+        console.log("No Token");
+      }
+    };
+    (async () => await credVerify())();
+  }, []);
+
+
   return (
     <div style={{ position: "sticky", top: 0, zIndex: 9999}}>
       <nav className="navbar navbar-expand-lg bg-body-tertiary " style={{minHeight:"60px"}}>
@@ -59,15 +80,23 @@ const Navbar = () => {
         />
         <button className="btn btn-outline-success" type="submit" >Search</button>
       </form> */}
-            <Link to="/login">
+      <div className="d-flex">
+
+      {profile ? (
+          <Link to="/profile">
+          <h1>Profile</h1>
+        </Link>
+        ): (
+          <Link to="/login">
               <button
-                className="btn btn-outline-success d-flex link-underline-opacity-0"
+                className="btn btn-outline-success link-underline-opacity-0"
                 style={{ marginRight: "10px" }}
               >
                 Login
               </button>
             </Link>
-            
+          )}
+            </div>
           </div>
         </div>
       </nav>

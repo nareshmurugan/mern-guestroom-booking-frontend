@@ -2,9 +2,9 @@ import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Bookingrooms from "./Bookingrooms";
-import Loading from "./Loading";
-import Filter from "./Filter";
-import SearchFil from "./SearchFil";
+import Loading from "../components/Loading";
+import Filter from "../components/Filter";
+import SearchFil from "../components/SearchFil";
 
 const Roomscreen = ({ search }) => {
   const [rooms, setRooms] = useState([]);
