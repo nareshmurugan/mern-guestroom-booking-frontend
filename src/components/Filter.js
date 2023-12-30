@@ -50,46 +50,4 @@ const Filter = () => {
 };
 
 
-
-
-// Dropdown.js
-
-// import React, { useState } from 'react';
-
-// const Dropdown = ({ options, onSelect }) => {
-//   const [selectedOption, setSelectedOption] = useState(null);
-//   const [isOpen, setIsOpen] = useState(false);
-
-//   const handleOptionClick = (option) => {
-//     setSelectedOption(option);
-//     onSelect(option);
-//     closeDropdown();
-//   };
-
-//   const toggleDropdown = () => {
-//     setIsOpen((prevIsOpen) => !prevIsOpen);
-//   };
-
-//   const closeDropdown = () => {
-//     setIsOpen(false);
-//   };
-
-//   return (
-//     <div className="dropdown">
-//       <button className="dropdown-toggle" onClick={toggleDropdown}>
-//         {selectedOption ? selectedOption.label : 'Select an option'}
-//       </button>
-//       {isOpen && (
-//         <ul className="dropdown-menu">
-//           {options.map((option) => (
-//             <li key={option.value} onClick={() => handleOptionClick(option)}>
-//               {option.label}
-//             </li>
-//           ))}
-//         </ul>
-//       )}
-//     </div>
-//   );
-// };
-
 export default Filter;

@@ -31,7 +31,7 @@ function App() {
         handleSubmit={handleSubmit}
         />
       <Routes>
-        <Route path="/room" element={<Roomscreen search ={search}/>}/>
+        <Route path="/room" element={<Roomscreen search ={search} setSearch={setSearch} handleSubmit={handleSubmit}/>}/>
         <Route path="/home" element={<Home/>}/>
         <Route path="/services" element={<Services/>}/>
         <Route path="/bookings" element={<Bookings/>}/>

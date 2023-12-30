@@ -1,17 +1,19 @@
-import React,{useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom/dist/umd/react-router-dom.development";
 import axios from "axios";
-import Cookies from "js-cookies"
+import { CgProfile } from "react-icons/cg";
+import Cookies from "js-cookies";
 
 const Navbar = () => {
-  const [profile, setProfile]=useState(false)
+  const [profile, setProfile] = useState(false);
   useEffect(() => {
     const credVerify = async () => {
       try {
         const token = `Bearer ${Cookies.getItem("Credentials")}`;
-        console.log(token)
-        const data = (await axios.post("/api/user/verify",{token: token})).data;
-        console.log(data)
+        console.log(token);
+        const data = (await axios.post("/api/user/verify", { token: token }))
+          .data;
+        console.log(data);
         if (data.result === "Success") {
           setProfile(true);
         }
@@ -21,11 +23,13 @@ const Navbar = () => {
     };
     (async () => await credVerify())();
   }, []);
-
-
+  
   return (
-    <div style={{ position: "sticky", top: 0, zIndex: 9999}}>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary " style={{minHeight:"60px"}}>
+    <div style={{ position: "sticky", top: 0, zIndex: 9999 }}>
+      <nav
+        className="navbar navbar-expand-lg bg-body-tertiary "
+        style={{ minHeight: "60px" }}
+      >
         <div className="container-fluid">
           <button
             className="navbar-toggler"
@@ -69,33 +73,22 @@ const Navbar = () => {
                 </Link>
               </li>
             </ul>
-            {/* <form className="d-flex" role="search" onSubmit={handleSubmit}>
-        <input className="form-control me-2" 
-        type="search" 
-        placeholder="Hotel Name" 
-        aria-label="Search"
-        required
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-        />
-        <button className="btn btn-outline-success" type="submit" >Search</button>
-      </form> */}
-      <div className="d-flex">
 
-      {profile ? (
-          <Link to="/profile">
-          <h1>Profile</h1>
-        </Link>
-        ): (
-          <Link to="/login">
-              <button
-                className="btn btn-outline-success link-underline-opacity-0"
-                style={{ marginRight: "10px" }}
-              >
-                Login
-              </button>
-            </Link>
-          )}
+            <div className="d-flex">
+              {profile ? (
+                <Link to="/profile">
+                  <CgProfile />
+                </Link>
+              ) : (
+                <Link to="/login">
+                  <button
+                    className="btn btn-outline-success link-underline-opacity-0"
+                    style={{ marginRight: "10px" }}
+                  >
+                    Login
+                  </button>
+                </Link>
+              )}
             </div>
           </div>
         </div>

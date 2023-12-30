@@ -1440,14 +1440,14 @@ h6 {
 .modal{
   margin-top: 50px;
 }
-/* .modal .modal-header button {
+ /* .modal .modal-header button {
   margin: 50px auto;
   padding: 0px 8px 5px 8px;
   font-size: 25px;
   border-radius: 20px;
   background: #FFD700;
   color: #fff;
-}
+} */
 
 .modal .modal-body img {
   height: 100%;
@@ -1468,20 +1468,7 @@ h6 {
   text-align: center;
 }
 
-.modal .modal-body a {
-  display: inline-block;
-  margin: 0 auto;
-  padding: 8px 30px;
-  background: #222222;
-  color: #FFD700;
-  cursor: pointer;
-  border: none;
-}
 
-.modal .modal-body a:hover {
-  color: #222222;
-  background: #FFD700;
-}
 
 .modal .port-slider-nav .slick-track {
   padding: 30px 0 15px 0;
@@ -1491,7 +1478,7 @@ h6 {
   -ms-transform: scale(1.2);
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
-} */
+} 
 
 /* ================================================= */
 /* ---------------- Subscribe Style ---------------- */

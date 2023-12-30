@@ -2,10 +2,7 @@ import React from 'react'
 
 function Aboutus() {
   return (
-    <div>Aboutus
-        <h1>
-            abo
-        </h1>
+    <div>
         <div id="about">
             <div class="container">
                 <div class="section-header">

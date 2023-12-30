@@ -4,9 +4,9 @@ import { useState, useEffect } from "react";
 import Bookingrooms from "./Bookingrooms";
 import Loading from "../components/Loading";
 import Filter from "../components/Filter";
-import SearchFil from "../components/SearchFil";
 
-const Roomscreen = ({ search }) => {
+
+const Roomscreen = ({ search,setSearch,handleSubmit }) => {
   const [rooms, setRooms] = useState([]);
   const [loading, setLoading] = useState();
   const [error, setError] = useState();
@@ -29,7 +29,19 @@ const Roomscreen = ({ search }) => {
 
   return (
     <div>
-      <h1>Home</h1>
+      <div className="d-flex justify-content-end" style={{width:"100%", marginTop:"10px"}}>
+        <form className="d-flex" role="search" onSubmit={handleSubmit} >
+        <input className="form-control me-2" style={{width:"max(150px,30%)"}}
+        type="search" 
+        placeholder="Hotel Name" 
+        aria-label="Search"
+        required
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        />
+        <button className="btn btn-outline-success" type="submit" >Search</button>
+      </form> 
+      </div>
         {loading ? (
           <div className="d-flex justify-content-center align-items-center vh-100">
             <Loading />
@@ -38,11 +50,10 @@ const Roomscreen = ({ search }) => {
           <h1>Error</h1>
         ) : (
           <div className="row">
-            <SearchFil />
-            <div className="col-md-3">
+            {/* <SearchFil /> */}
+            {/* <div className="col-md-3">
             <Filter />
-              </div>
-            <div className="col-md-8">
+              </div> */}
             {
           rooms
             .filter((r) => r.name.toLowerCase().includes(search.toLowerCase()))
@@ -54,7 +65,6 @@ const Roomscreen = ({ search }) => {
               );
             })
           }
-          </div>
           </div>)}
       </div>
   );
