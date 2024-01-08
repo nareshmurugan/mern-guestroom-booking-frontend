@@ -100,7 +100,7 @@ const ProductCard = ({
                   <div class="room-rate">
                     <h3>From</h3>
                     <h1>$150</h1>
-                  <Link to = {`/payment/${_id}`}><a>Book Now</a></Link>
+                  <Link to = {`/payment/${_id}`}>Book Now</Link>
                   </div>
                 </div>
               </div>

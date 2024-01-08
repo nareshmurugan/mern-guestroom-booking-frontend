@@ -5,26 +5,18 @@ import "react-datepicker/dist/react-datepicker.css";
 import moment from "moment";
 import "../App.css"
 
-const SearchFil = () => {
-  const [startDate, setStartDate] = useState(null);
-  const [endDate, setEndDate] = useState(null);
+const DateComp = ({startDate,endDate,setStartDate, setEndDate}) => {
 
-  const handleClick = () => {
-    const sd = new Date(
-      moment(new Date(startDate)).format("YYYY-MM-DD")
-    ).getTime();
-    const ed = new Date(
-      moment(new Date(endDate)).format("YYYY-MM-DD")
-    ).getTime();
-    console.log(ed, sd);
-  };
 
   return (
-    <div>
-      <h1>Date Range Picker</h1>
-      <div>
-        <label>Check-In Date:</label>
-        <DatePicker
+    <div >
+      <div
+        className="d-flex justify-content-center align-text-center"
+        style={{ width: "100%", margin: "10px" }}
+      >
+        
+        <DatePicker className="form-control me-2"
+        style={{ width: "max(150px,30%)" }}
           dateFormat="dd/MM/yyyy"
           selected={startDate}
           onChange={(date) => setStartDate(date)}
@@ -34,10 +26,11 @@ const SearchFil = () => {
           minDate={new Date()}
           placeholderText="Select Check-In Date"
         />
-      </div>
-      <div>
-        <label>Check-Out Date:</label>
+      <h1>=</h1>
+       
         <DatePicker
+        className="form-control me-2"
+        style={{ width: "max(150px,30%)" }}
           selected={endDate}
           onChange={(date) => setEndDate(date)}
           selectsEnd
@@ -46,14 +39,9 @@ const SearchFil = () => {
           minDate={startDate}
           placeholderText="Select Check-Out Date"
         />
-
-        <Button variant="secondary" onClick={() => handleClick()}>
-          Search
-        </Button>
-      </div>
-
+</div>
     </div>
   );
 };
 
-export default SearchFil;
+export default DateComp;

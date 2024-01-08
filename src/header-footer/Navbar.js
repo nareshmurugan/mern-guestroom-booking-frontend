@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom/dist/umd/react-router-dom.development";
+import { Link, useLocation } from "react-router-dom/dist/umd/react-router-dom.development";
 import axios from "axios";
 import { CgProfile } from "react-icons/cg";
 import Cookies from "js-cookies";
 
 const Navbar = () => {
   const [profile, setProfile] = useState(false);
+  const location = useLocation();
+
   useEffect(() => {
     const credVerify = async () => {
       try {
@@ -22,8 +24,8 @@ const Navbar = () => {
       }
     };
     (async () => await credVerify())();
-  }, []);
-  
+  }, [location]);
+
   return (
     <div style={{ position: "sticky", top: 0, zIndex: 9999 }}>
       <nav
@@ -32,15 +34,15 @@ const Navbar = () => {
       >
         <div className="container-fluid">
           <button
-            className="navbar-toggler"
+            class="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#navbarTogglerDemo03"
-            aria-controls="navbarTogglerDemo03"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
           </button>
           <Link to="/home" className="navbar-brand">
             DODO

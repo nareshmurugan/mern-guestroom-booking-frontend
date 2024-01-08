@@ -1861,6 +1861,7 @@ input::-ms-input-placeholder {
 /* ================================================= */
 
 #footer {
+  width :100%;
   position: relative;
   padding: 25px 0 25px 0;
   text-align: center;

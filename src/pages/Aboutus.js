@@ -6,7 +6,7 @@ function Aboutus() {
         <div id="about">
             <div class="container">
                 <div class="section-header">
-                    <h2>About Royal Hotel</h2>
+                    <h2>About DODO Hotel</h2>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in mi libero. Quisque convallis, enim at venenatis tincidunt.
                     </p>

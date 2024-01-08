@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom/dist/umd/react-router-dom.development'
 function Footer() {
   return (
     <div >
-         <div id="footer" style={{ position: "sticky", bottom:0, zIndex: 9999}}>
+         <div id="footer">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
